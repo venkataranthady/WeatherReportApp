@@ -1,0 +1,12 @@
+/* (ldpi) Android (portrait and landscape) ----------- */
+@media screen and (-webkit-device-pixel-ratio: 0.75) {
+    
+}
+/* (ldpi) Android (landscape) ----------- */
+@media screen and (-webkit-device-pixel-ratio: 0.75) and (orientation : landscape) {
+    /* CSS  */
+}
+/* (ldpi) Android (portrait) ----------- */
+@media screen and (-webkit-device-pixel-ratio: 0.75) and (orientation : portrait) {
+    /* CSS  */
+}

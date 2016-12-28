@@ -1,0 +1,34 @@
+<div id="DetailPage">
+	<h1>Weather Report !</h1>
+	
+	<div ng-show="isSingleDayReport" id="singleDayReport">
+		<h3> Weather forecast of {{cityName}} on {{date}}</h3>
+		<div ng-repeat="report in reportList | filter:filterExpression"> 
+			<span ng-hide="true">{{report.dt}}</span>
+			<div>{{"Temparature during day = "+report.temp.day +" deg Celcius"}}</div> 
+			<div>{{"Temparature during night = "+report.temp.night +" deg Celcius"}}</div> 
+			<div>{{"Humidity = "+report.humidity+" %"}}</div>
+			<div>{{"Weather = "+report.weather[0].description}}</div>
+			<div>{{"Atmospheric pressure = "+report.pressure+" hPa"}}</div>
+			<div>{{"Wind Speed = "+report.speed+" meter/sec"}}</div>
+			<div>{{"Cloudiness = "+report.clouds+" %"}}</div>
+		</div>
+	</div>	
+	
+	<div ng-hide="isSingleDayReport" id="fiveDayForecast">
+		<h3> 5 day weather forecast for {{cityName}}</h3>
+		<table border="1">
+			<tr>
+				<td ng-repeat="report in reportList">
+					<h3>{{getDisplayDate(report.dt)}}</h3> 
+					<div>{{"Temparature="+report.main.temp +" deg Celcius"}}</div> 
+					<div>{{"Atmospheric pressure="+report.main.pressure +" hPa"}}</div> 
+					<div>{{"Humidity="+report.main.humidity+ " %"}}</div>
+					<div>{{"Weather="+report.weather[0].description}}</div>
+				</td>
+			<tr>
+		</table>
+	</div>
+	
+	<button ng-click="goHome()" class="goBack">Go Back</button>
+</div>

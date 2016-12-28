@@ -1,0 +1,20 @@
+<div id="HomePage">
+	<div>
+		<label>Please choose a city</label>
+		<select ng-model="citySelector" class="countrySelectorDropdown">
+			<option ng-repeat="city in cityDropdownList">{{city}}</option>
+		</select>
+	</div>
+	<div>
+		<label>Please choose a date</label>
+		<input type="date" ng-model="datePicker"></input>
+		<label ng-show="isError" class="errorText" ng-bind="ErrorMessage"></label>
+	</div>
+	<div>
+		<button ng-click="showWeather()">Weather Report</button>
+	</div>
+	<div>
+		<button ng-click="forecast()">5 days Weather forecast</button>
+		<label class="noteText">Note:Date is not required for 5 day forecast.</label>
+	</div>
+</div>
